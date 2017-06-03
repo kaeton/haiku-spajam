@@ -3,6 +3,7 @@
 # vim:set fileencoding=utf-8:
 
 from flask import Flask, request
+from flask import json
 import requests
 import boto3
 app = Flask(__name__)
@@ -30,7 +31,7 @@ def echo():
     # return "You said: " + request.args.get('text', '')
     return str(rekresp)
 
-@app.route("/getImage", methods = ['POST'])
+@app.route("/uploadImage", methods = ['POST'])
 def getImage():
     f = open('upload_sample.jpg', 'wb')
     f.write(request.data)
