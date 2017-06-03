@@ -33,7 +33,7 @@ def echo():
 
 @app.route("/uploadImage", methods = ['POST'])
 def getImage():
-    f = open('upload_sample.jpg', 'wb')
+    f = open('upload_sample.png', 'wb')
     f.write(request.data)
     return 'written data!\n'
 
