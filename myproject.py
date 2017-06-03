@@ -30,5 +30,12 @@ def echo():
     # return "You said: " + request.args.get('text', '')
     return str(rekresp)
 
+@app.route("/getImage", methods = ['POST'])
+def getImage():
+    f = open('upload_sample.jpg', 'wb')
+    f.write(request.data)
+    return 'written data!\n'
+
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0",debug=True)
